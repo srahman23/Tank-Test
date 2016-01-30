@@ -48,8 +48,16 @@ public class Drivetrain extends Subsystem {
 		frontLeft.set(RobotMap.REAR_LEFT_MOTOR);
 	}
 	
+	public void arcadeDrive() {
+		drive.arcadeDrive(OI.getInstance().getLeftStick());
+		
+		frontRight.set(RobotMap.REAR_RIGHT_MOTOR);
+		frontLeft.set(RobotMap.REAR_LEFT_MOTOR);
+	}
+	
 	public void teleoperatedDrive() {
-		tankDrive();
+		//tankDrive();
+		arcadeDrive();
 	}
 	
 	public void initDefaultCommand() {
